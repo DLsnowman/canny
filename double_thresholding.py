@@ -24,11 +24,12 @@ def thresholding(im):
     return thres, strongs
 
 if __name__ == '__main__':
-    from sys import argv
-    if len(argv) < 2:
-        print("Usage: python %s <image>" % argv[0])
-        exit()
-    im = array(Image.open(argv[1]))
+    # from sys import argv
+    # if len(argv) < 2:
+    #     print("Usage: python %s <image>" % argv[0])
+    #     exit()
+    im_path = '/tfshare/PycharmProjects/canny/valve.png'
+    im = array(Image.open(im_path))
     im = im[:, :, 0]
     gim = gaussian(im)
     grim, gphase = gradient(gim)

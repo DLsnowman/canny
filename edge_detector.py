@@ -40,11 +40,12 @@ class tracking:
 
 
 if __name__ == '__main__':
-    from sys import argv
-    if len(argv) < 2:
-        print("Usage: python %s <image>" % argv[0])
-        exit()
-    im = array(Image.open(argv[1]))
+    # from sys import argv
+    # if len(argv) < 2:
+    #     print("Usage: python %s <image>" % argv[0])
+    #     exit()
+    im_path = '/tfshare/PycharmProjects/canny/valve.png'
+    im = array(Image.open(im_path))
     subplot(1, 2, 1)
     imshow(im)
     axis('off')

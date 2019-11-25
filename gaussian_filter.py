@@ -9,7 +9,7 @@ def gaussian(im):
                [4, 9,  12, 9,  4],
                [5, 12, 15, 12, 5],
                [4, 9,  12, 9,  4],
-               [2, 4,  5,  4,  2]]) / 156;
+               [2, 4,  5,  4,  2]]) / 156
     kernel = zeros(im.shape)
     kernel[:b.shape[0], :b.shape[1]] = b
 
@@ -22,7 +22,7 @@ def gaussian(im):
 if __name__ == "__main__":
     from sys import argv
     if len(argv) < 2:
-        print "Usage: python %s <image>" % argv[0]
+        print("Usage: python %s <image>" % argv[0])
         exit()
     im = array(Image.open(argv[1]))
     im = im[:, :, 0]

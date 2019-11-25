@@ -7,8 +7,8 @@ from matplotlib.pyplot import imshow, show, subplot, figure, gray, title, axis
 
 def maximum(det, phase):
   gmax = zeros(det.shape)
-  for i in xrange(gmax.shape[0]):
-    for j in xrange(gmax.shape[1]):
+  for i in range(gmax.shape[0]):
+    for j in range(gmax.shape[1]):
       if phase[i][j] < 0:
         phase[i][j] += 360
 
@@ -34,7 +34,7 @@ def maximum(det, phase):
 if __name__ == '__main__':
   from sys import argv
   if len(argv) < 2:
-      print "Usage: python %s <image>" % argv[0]
+      print("Usage: python %s <image>" % argv[0])
       exit()
   im = array(Image.open(argv[1]))
   im = im[:, :, 0]

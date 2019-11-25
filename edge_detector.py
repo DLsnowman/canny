@@ -18,8 +18,8 @@ class tracking:
         for s in strongs:
             if not self.vis[s]:
                 self.dfs(s)
-        for i in xrange(self.im.shape[0]):
-            for j in xrange(self.im.shape[1]):
+        for i in range(self.im.shape[0]):
+            for j in range(self.im.shape[1]):
                 self.im[i, j] = 1.0 if self.vis[i, j] else 0.0
 
     def dfs(self, origin):
@@ -28,8 +28,8 @@ class tracking:
             s = q.pop()
             self.vis[s] = True
             self.im[s] = 1
-            for k in xrange(len(self.dx)):
-                for c in xrange(1, 16):
+            for k in range(len(self.dx)):
+                for c in range(1, 16):
                     nx, ny = s[0] + c * self.dx[k], s[1] + c * self.dy[k]
                     if self.exists(nx, ny) and (self.im[nx, ny] >= 0.5) and (not self.vis[nx, ny]):
                         q.append((nx, ny))
@@ -42,7 +42,7 @@ class tracking:
 if __name__ == '__main__':
     from sys import argv
     if len(argv) < 2:
-        print "Usage: python %s <image>" % argv[0]
+        print("Usage: python %s <image>" % argv[0])
         exit()
     im = array(Image.open(argv[1]))
     subplot(1, 2, 1)

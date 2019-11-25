@@ -13,8 +13,8 @@ def thresholding(im):
     mmax = max(im)
     lo, hi = 0.1 * mmax, 0.8 * mmax
     strongs = []
-    for i in xrange(im.shape[0]):
-        for j in xrange(im.shape[1]):
+    for i in range(im.shape[0]):
+        for j in range(im.shape[1]):
             px = im[i][j]
             if px >= hi:
                 thres[i][j] = strong
@@ -26,7 +26,7 @@ def thresholding(im):
 if __name__ == '__main__':
     from sys import argv
     if len(argv) < 2:
-        print "Usage: python %s <image>" % argv[0]
+        print("Usage: python %s <image>" % argv[0])
         exit()
     im = array(Image.open(argv[1]))
     im = im[:, :, 0]
